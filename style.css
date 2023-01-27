@@ -1,0 +1,125 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: rgb(204, 132, 0);
+}
+
+.buttons > button {
+    width: calc(33.33% - 10px);
+    margin: 5px;
+    font-size: clamp(1.50rem, calc(1.38rem + 0.56vw), 2.00rem);
+    border-radius: 0.5em;
+    border: none;
+    color: white;
+    background-color: black;
+    cursor: pointer;
+}
+
+.controls {
+    display: grid;
+    grid-template-columns: 1rem 1fr minmax(1rem, 1fr) 3fr 2fr;
+}
+
+.controls img {
+    max-width: 100%;
+    height: auto;
+    place-self: center;
+    grid-column: 2;
+}
+
+.controls .buttons {
+    display: flex;
+    flex-wrap: wrap;
+    grid-column: 4;
+}
+
+#poke-region {
+    text-transform: capitalize;
+    text-align: center;
+    color: #de1526;
+    margin-bottom: 0;
+    font-size: clamp(2.50rem, calc(1.09rem + 3.48vw), 5.00rem);
+    font-weight: bold;
+    font-family: "poppins", sans-serif;
+    text-shadow: 2px -2px 3px #082b3a;
+}
+
+#poke-box {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    margin: 0 2rem;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color: white;
+    margin-bottom: 4rem;
+}
+
+
+.container p {
+    text-transform: capitalize;
+    font-family: "poppins", sans-serif;
+    font-size: 1.5rem;
+    white-space: nowrap;
+}
+
+.container ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-evenly;   
+}
+
+.container ul li {
+    font-size: 1.25rem;
+    padding: 0.25em 0.5em;
+    border-radius: 0.25em;
+}
+
+#button-top {
+    position: fixed;
+    inset: auto 1rem 1rem auto;
+    background-color: white;
+    display: inline-block;
+    padding: 0.5rem;
+}
+
+#button-top img {
+    display: block;
+    width: 2rem;
+    height: 2rem;
+}
+
+/* media queries */
+@media screen and (max-width: 850px) {
+    .controls img {
+        grid-column: 1 / 3;
+    }
+    .controls .buttons {
+        grid-column: 3 / -1;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .controls img,
+    .controls .buttons {
+        grid-column: 1 / -1;
+        margin-top: 1rem;
+    }
+
+    #poke-region {
+        color: #082b3a;
+        text-shadow: 00px 00px 0 #17749c;
+    }
+}
