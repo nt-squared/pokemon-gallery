@@ -22,16 +22,15 @@ async function getPokemonEntries() {
 }
 const LOCAL_STORAGE_KEY = 'POKE-GEN';
 
-buttons.forEach((button, index) => {
+// (async () => { const entriesArr = await getPokemonEntries() })();
+
+buttons.forEach(async (button, index) => {
     let url = BASE_URL;
     let offset = 0;
-
+    const entriesArr = await getPokemonEntries()
     button.addEventListener('click', async () => {
         pokeBox.innerHTML = "";
 
-
-
-        const entriesArr = await getPokemonEntries();
         let limit = entriesArr[index];
 
         if (index !== 0) {
