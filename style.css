@@ -40,15 +40,21 @@ body {
     grid-column: 4;
 }
 
-#poke-region {
-    text-transform: capitalize;
-    text-align: center;
-    color: #de1526;
-    margin-bottom: 0;
-    font-size: clamp(2.50rem, calc(1.09rem + 3.48vw), 5.00rem);
-    font-weight: bold;
-    font-family: "poppins", sans-serif;
-    text-shadow: 2px -2px 3px #082b3a;
+#poke-container {
+    margin-block: 5rem 2rem;
+}
+
+.spinner {
+    width: 10%;
+    height: 10%;
+    display: block;
+    display: none;
+    margin-inline: auto;
+    animation: spinner 5s linear infinite;
+}
+
+@keyframes spinner {
+    to {transform: rotate(360deg);}
 }
 
 #poke-box {
@@ -57,7 +63,9 @@ body {
     margin: 0 2rem;
 }
 
-.container {
+
+/* Pokemon Card */
+.poke-card {
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -65,15 +73,16 @@ body {
     margin-bottom: 4rem;
 }
 
-
-.container p {
+/* Pokemon Name */
+.poke-card .poke-name {
     text-transform: capitalize;
     font-family: "poppins", sans-serif;
     font-size: 1.5rem;
     white-space: nowrap;
 }
 
-.container ul {
+/* Pokemon Type */
+.poke-card .type-list {
     list-style: none;
     margin: 0;
     padding: 0;
@@ -81,7 +90,7 @@ body {
     justify-content: space-evenly;   
 }
 
-.container ul li {
+.poke-card .type-list li {
     font-size: 1.25rem;
     padding: 0.25em 0.5em;
     border-radius: 0.25em;
@@ -116,10 +125,5 @@ body {
     .controls .buttons {
         grid-column: 1 / -1;
         margin-top: 1rem;
-    }
-
-    #poke-region {
-        color: #082b3a;
-        text-shadow: 00px 00px 0 #17749c;
-    }
+    }    
 }
